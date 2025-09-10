@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Дигитални Компетенции България</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <style>
         body {
             font-family: 'Inter', sans-serif;
@@ -109,11 +112,51 @@
             background: #eee;
             font-size: 0.9rem;
         }
+        /* Button */
+        .modalBtn {
+        padding: 10px 20px;
+        background: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 16px;
+        }
+        .modalBtn:hover {
+        background: #3a9d44;
+        color: white;
+        }
+
+
+
+        /* Table */
+        table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 15px;
+        }
+        th, td {
+        border: 1px solid #ccc;
+        padding: 8px;
+        }
+        thead {
+        background: #2e7d32;
+        color: white;
+        }
+        tr:nth-child(even) { background: #f9f9f9; }
+        tr:nth-child(odd) { background: #fff; }
+        a { color: #1565c0; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+
+        .fa-file-archive {
+        color: #f39c12;
+        margin-right: 8px;
+        }
     </style>
 </head>
 <body>
     <header>
-        <h1>PIM-STZ - Доставчик на обучение</h1>
+        <h1>PIM-SZ - Доставчик на обучение</h1>
         <p>Актуална информация за безплатни обучения чрез ваучери за възрастни според <br>Европейската рамка за дигитална компетентност (DigComp 2.1)</p>
     </header>
 
@@ -124,7 +167,9 @@
             <p><strong>Място:</strong> Онлайн</p>
             <p><strong>Форма:</strong> Синхронна</p>
             <p><strong>Период:</strong> 1 септември - 15 септември 2025</p>
-            <a href="https://drive.google.com/drive/folders/13CKNPM2ipnE6o5M1UWAuN1z_C52z6uUG?usp=drive_link target="_blank">Виж материалите</a>
+            <button type="button" class="btn modalBtn" data-bs-toggle="modal" data-bs-target="#materialsModal">
+            Виж материалите
+            </button>
         </div>
 
         <div class="course-card">
@@ -133,7 +178,9 @@
             <p><strong>Място:</strong> Онлайн</p>
             <p><strong>Форма:</strong> Синхронна</p>
             <p><strong>Период:</strong> 10 септември - 30 септември 2025</p>
-            <a href="https://drive.google.com/drive/folders/1QYDbMSEKk-67b0hZh8yBwDeeme4psYKV?usp=drive_link" target="_blank">Виж материалите</a>
+            <button type="button" class="btn modalBtn" data-bs-toggle="modal" data-bs-target="#materialsModal2">
+            Виж материалите
+            </button>
         </div>
 
         <div class="course-card">
@@ -142,7 +189,9 @@
             <p><strong>Място:</strong> Онлайн</p>
             <p><strong>Форма:</strong> Синхронна</p>
             <p><strong>Период:</strong> 5 октомври - 20 октомври 2025</p>
-            <a href="" target="_blank">Виж материалите</a>
+            <button type="button" class="btn modalBtn" data-bs-toggle="modal" data-bs-target="#materialsModal3">
+            Виж материалите
+            </button>
         </div>
     </main>
 
@@ -172,33 +221,772 @@
             <p><strong>Финален изпит:</strong> Онлайн изпит от Единния сертификационен център. Сертификат при успешно полагане на изпита.</p>
         </div>
         <div class="tab-content" id="tab2" style="display:none;">
-            <h3>Ниво 3 - В процес на разработка</h3>
-            <p>Информацията за ниво 3 ще бъде добавена скоро.</p>
+            <h3>Програма за средни дигитални компетентности</h3>
+            <p>Целта на програмата е да надгради върху базовите знания и умения за работа с дигитални технологии и да предостави средни дигитални компетентности, приложими в различни области.</p>
+            <p><strong>Модули:</strong></p>
+            <ul>
+                <li>Грамотност с информация и данни – търсене, управление и оценка на дигитално съдържание.</li>
+                <li>Комуникация и сътрудничество – взаимодействие онлайн, споделяне и управление на дигитална идентичност.</li>
+                <li>Създаване на дигитално съдържание – разработване, интегриране, авторско право и лицензи.</li>
+                <li>Безопасност – защита на устройства, лични данни и здраве при използване на технологии.</li>
+                <li>Решаване на проблеми – техническа помощ и идентифициране на нуждите за дигитални решения.</li>
+            </ul>
+            <p><strong>Пълната програма:</strong> <a href="https://drive.google.com/file/d/1IYj5Wwf-3351_ZOv6OG4qK9TloOisYMF/view?usp=sharing" target="_blank">Учебен план</a></p>
+            <p><strong>Продължителност:</strong> 45 учебни часа.</p>
+            <p><strong>Форма:</strong> Онлайн с лектор + материали за самостоятелно ползване.</p>
+            <p><strong>Групи:</strong> До 20 участника.</p>
+            <p><strong>Финален изпит:</strong> Онлайн изпит от Единния сертификационен център. Сертификат при успешно полагане на изпита.</p>
         </div>
         <div class="tab-content" id="tab3" style="display:none;">
-            <h3>Ниво 4 - В процес на разработка</h3>
-            <p>Информацията за ниво 4 ще бъде добавена скоро.</p>
+            <h3>Програма за напреднали дигитални компетентности</h3>
+            <p>Целта на програмата е да надгради върху средните знания и умения за работа с дигитални технологии и да предостави напреднали дигитални компетентности, приложими в различни области.</p>
+            <p><strong>Модули:</strong></p>
+            <ul>
+                <li>Грамотност с информация и данни – търсене, управление и оценка на дигитално съдържание.</li>
+                <li>Комуникация и сътрудничество – взаимодействие онлайн, споделяне и управление на дигитална идентичност.</li>
+                <li>Създаване на дигитално съдържание – разработване, интегриране, авторско право и лицензи.</li>
+                <li>Безопасност – защита на устройства, лични данни и здраве при използване на технологии.</li>
+                <li>Решаване на проблеми – техническа помощ и идентифициране на нуждите за дигитални решения.</li>
+            </ul>
+            <p><strong>Пълната програма:</strong> <a href="https://drive.google.com/file/d/1IYj5Wwf-3351_ZOv6OG4qK9TloOisYMF/view?usp=sharing" target="_blank">Учебен план</a></p>
+            <p><strong>Продължителност:</strong> 45 учебни часа.</p>
+            <p><strong>Форма:</strong> Онлайн с лектор + материали за самостоятелно ползване.</p>
+            <p><strong>Групи:</strong> До 20 участника.</p>
+            <p><strong>Финален изпит:</strong> Онлайн изпит от Единния сертификационен център. Сертификат при успешно полагане на изпита.</p>
         </div>
     </section>
 
     <footer>
-        &copy; 2025 Дигитални Компетенции България. Всички права запазени.
+        &copy; 2025 PIM-SZ ООД. Всички права запазени.
     </footer>
 
-    <script>
-        const tabs = document.querySelectorAll('.tab-buttons button');
-        const contents = document.querySelectorAll('.tab-content');
 
-        tabs.forEach(tab => {
-            tab.addEventListener('click', () => {
-                tabs.forEach(t => t.classList.remove('active'));
-                tab.classList.add('active');
+<div class="modal" id="materialsModal" tabindex="-1" aria-labelledby="materialsModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header bg-success text-white">
+        <h5 class="modal-title" id="materialsModalLabel">Учебни материали</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <table class="table table-bordered table-striped align-middle">
+            <thead class="table-success">
+                <tr>
+                    <th>Прикачен файл</th>
+                    <th>Размер</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <i class="fas fa-file-archive me-2"></i>
+                        <a href="https://chrdri.net/sites/default/files/niva1-2tema1.1.zip" target="_blank">
+                            Модул 1 - Тема 1.1
+                        </a>
+                    </td>
+                    <td>5.88 MB</td>
+                </tr>
+                <tr>
+                    <td>
+                        <i class="fas fa-file-archive me-2"></i>
+                        <a href="https://chrdri.net/sites/default/files/niva1-2tema1.2.zip" target="_blank">
+                            Модул 1 - Тема 1.2
+                        </a>
+                    </td>
+                    <td>1.01 MB</td>
+                </tr>
+                <tr>
+                    <td>
+                        <i class="fas fa-file-archive me-2"></i>
+                        <a href="https://chrdri.net/sites/default/files/niva1-2tema1.3.zip" target="_blank">
+                            Модул 1 - Тема 1.3
+                        </a>
+                    </td>
+                    <td>7.63 MB</td>
+                </tr>
+                <tr>
+                    <td>
+                        <i class="fas fa-file-archive me-2"></i>
+                        <a href="https://chrdri.net/sites/default/files/niva1-2tema2.1.zip" target="_blank">
+                            Модул 2 - Тема 2.1
+                        </a>
+                    </td>
+                    <td>7.64 MB</td>
+                </tr>
+                <tr>
+                    <td>
+                        <i class="fas fa-file-archive me-2"></i>
+                        <a href="https://chrdri.net/sites/default/files/niva1-2tema2.2.zip" target="_blank">
+                            Модул 2 - Тема 2.2
+                        </a>
+                    </td>
+                    <td>9.96 MB</td>
+                </tr>
+                <tr>
+                    <td>
+                        <i class="fas fa-file-archive me-2"></i>
+                        <a href="https://chrdri.net/sites/default/files/niva1-2tema2.3.zip" target="_blank">
+                            Модул 2 - Тема 2.3
+                        </a>
+                    </td>
+                    <td>14.87 MB</td>
+                </tr>
+                <tr>
+                    <td>
+                        <i class="fas fa-file-archive me-2"></i>
+                        <a href="https://chrdri.net/sites/default/files/niva1-2tema2.4.zip" target="_blank">
+                            Модул 2 - Тема 2.4
+                        </a>
+                    </td>
+                    <td>4.81 MB</td>
+                </tr>
+                <tr>
+                    <td>
+                        <i class="fas fa-file-archive me-2"></i>
+                        <a href="https://chrdri.net/sites/default/files/niva1-2tema2.5.zip" target="_blank">
+                            Модул 2 - Тема 2.5
+                        </a>
+                    </td>
+                    <td>3.98 MB</td>
+                </tr>
+                <tr>
+                    <td>
+                        <i class="fas fa-file-archive me-2"></i>
+                        <a href="https://chrdri.net/sites/default/files/niva1-2tema2.6.zip" target="_blank">
+                            Модул 2 - Тема 2.6
+                        </a>
+                    </td>
+                    <td>6.65 MB</td>
+                </tr>
+                <tr>
+                    <td>
+                        <i class="fas fa-file-archive me-2"></i>
+                        <a href="https://chrdri.net/sites/default/files/niva1-2tema3.1.zip" target="_blank">
+                            Модул 3 - Тема 3.1
+                        </a>
+                    </td>
+                    <td>3.07 MB</td>
+                </tr>
+                <tr>
+                    <td>
+                        <i class="fas fa-file-archive me-2"></i>
+                        <a href="https://chrdri.net/sites/default/files/niva1-2tema3.2.zip" target="_blank">
+                            Модул 3 - Тема 3.2
+                        </a>
+                    </td>
+                    <td>19.65 MB</td>
+                </tr>
+                <tr>
+                    <td>
+                        <i class="fas fa-file-archive me-2"></i>
+                        <a href="https://chrdri.net/sites/default/files/niva1-2tema3.3.zip" target="_blank">
+                            Модул 3 - Тема 3.3
+                        </a>
+                    </td>
+                    <td>700.4 KB</td>
+                </tr>
+                <tr>
+                    <td>
+                        <i class="fas fa-file-archive me-2"></i>
+                        <a href="https://chrdri.net/sites/default/files/niva1-2tema3.4.zip" target="_blank">
+                            Модул 3 - Тема 3.4
+                        </a>
+                    </td>
+                    <td>1.37 MB</td>
+                </tr>
+                <tr>
+                    <td>
+                        <i class="fas fa-file-archive me-2"></i>
+                        <a href="https://chrdri.net/sites/default/files/niva1-2tema4.1.zip" target="_blank">
+                            Модул 4 - Тема 4.1
+                        </a>
+                    </td>
+                    <td>2.63 MB</td>
+                </tr>
+                <tr>
+                    <td>
+                        <i class="fas fa-file-archive me-2"></i>
+                        <a href="https://chrdri.net/sites/default/files/niva1-2tema4.2.zip" target="_blank">
+                            Модул 4 - Тема 4.2
+                        </a>
+                    </td>
+                    <td>2.87 MB</td>
+                </tr>
+                <tr>
+                    <td>
+                        <i class="fas fa-file-archive me-2"></i>
+                        <a href="https://chrdri.net/sites/default/files/niva1-2tema4.3.zip" target="_blank">
+                            Модул 4 - Тема 4.3
+                        </a>
+                    </td>
+                    <td>1.53 MB</td>
+                </tr>
+                <tr>
+                    <td>
+                        <i class="fas fa-file-archive me-2"></i>
+                        <a href="https://chrdri.net/sites/default/files/niva1-2tema4.4.zip" target="_blank">
+                            Модул 4 - Тема 4.4
+                        </a>
+                    </td>
+                    <td>3.72 MB</td>
+                </tr>
+                <tr>
+                    <td>
+                        <i class="fas fa-file-archive me-2"></i>
+                        <a href="https://chrdri.net/sites/default/files/niva1-2tema5.1.zip" target="_blank">
+                            Модул 5 - Тема 5.1
+                        </a>
+                    </td>
+                    <td>9.08 MB</td>
+                </tr>
+                <tr>
+                    <td>
+                        <i class="fas fa-file-archive me-2"></i>
+                        <a href="https://chrdri.net/sites/default/files/niva1-2tema5.2.zip" target="_blank">
+                            Модул 5 - Тема 5.2
+                        </a>
+                    </td>
+                    <td>10.91 MB</td>
+                </tr>
+                <tr>
+                    <td>
+                        <i class="fas fa-file-archive me-2"></i>
+                        <a href="https://chrdri.net/sites/default/files/niva1-2tema5.3.zip" target="_blank">
+                            Модул 5 - Тема 5.3
+                        </a>
+                    </td>
+                    <td>2.52 MB</td>
+                </tr>
+                <tr>
+                    <td>
+                        <i class="fas fa-file-archive me-2"></i>
+                        <a href="https://chrdri.net/sites/default/files/niva1-2tema5.4.zip" target="_blank">
+                            Модул 5 - Тема 5.4
+                        </a>
+                    </td>
+                    <td>5.34 MB</td>
+                </tr>
+                <tr>
+                    <td>
+                        <i class="fas fa-file-archive me-2"></i>
+                        <a href="https://chrdri.net/sites/default/files/niva1-2dopulnitelenmodultema6.1.zip" target="_blank">
+                            Модул 6 - Тема 6.1 - допълнителни
+                        </a>
+                    </td>
+                    <td>4.21 MB</td>
+                </tr>
+                <tr>
+                    <td>
+                        <i class="fas fa-file-archive me-2"></i>
+                        <a href="https://chrdri.net/sites/default/files/niva1-2dopulnitelenmodultema6.2.zip" target="_blank">
+                            Модул 6 - Тема 6.2 - допълнителни
+                        </a>
+                    </td>
+                    <td>5.87 MB</td>
+                </tr>
+                <tr>
+                    <td>
+                        <i class="fas fa-file-archive me-2"></i>
+                        <a href="https://chrdri.net/sites/default/files/niva1-2dopulnitelenmodultema6.3.zip" target="_blank">
+                            Модул 6 - Тема 6.3 - допълнителни
+                        </a>
+                    </td>
+                    <td>3.03 MB</td>
+                </tr>
+                <tr>
+                    <td>
+                        <i class="fas fa-file-archive me-2"></i>
+                        <a href="https://chrdri.net/sites/default/files/niva1-2dopulnitelenmodultema6.4.zip" target="_blank">
+                            Модул 6 - Тема 6.4 - допълнителни
+                        </a>
+                    </td>
+                    <td>2.04 MB</td>
+                </tr>
+                <tr>
+                    <td>
+                        <i class="fas fa-file-archive me-2"></i>
+                        <a href="https://chrdri.net/sites/default/files/niva1-2dopulnitelenmodultema6.5.zip" target="_blank">
+                            Модул 6 - Тема 6.5 - допълнителни
+                        </a>
+                    </td>
+                    <td>3.09 MB</td>
+                </tr>
+                <tr>
+                    <td>
+                        <i class="fas fa-file-archive me-2"></i>
+                        <a href="https://chrdri.net/sites/default/files/niva1-2dopulnitelenmodultema6.6.zip" target="_blank">
+                            Модул 6 - Тема 6.6 - допълнителни
+                        </a>
+                    </td>
+                    <td>1.77 MB</td>
+                </tr>
+                <tr>
+                    <td>
+                        <i class="fas fa-file-archive me-2"></i>
+                        <a href="https://chrdri.net/sites/default/files/obnovenimateriali.zip" target="_blank">
+                            Обновени - Тема 2, 4 и 6
+                        </a>
+                    </td>
+                    <td>11.55 MB</td>
+                </tr>
+                <tr>
+                    <td>
+                        <i class="fas fa-file-archive me-2"></i>
+                        <a href="https://chrdri.net/sites/default/files/opisanienamaterilitezabazovonivo1-2.zip" target="_blank">
+                            Описание на материлите за базово ниво (1-2)
+                        </a>
+                    </td>
+                    <td>613.91 KB</td>
+                </tr>
+            </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
 
-                contents.forEach(c => c.style.display = 'none');
-                document.getElementById(tab.getAttribute('data-tab')).style.display = 'block';
-            });
+
+<div class="modal" id="materialsModal2" tabindex="-1" aria-labelledby="materialsModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header bg-success text-white">
+        <h5 class="modal-title" id="materialsModalLabel">Учебни материали</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <table class="table table-bordered table-striped align-middle">
+            <thead class="table-success">
+                <tr>
+                    <th>Прикачен файл</th>
+                    <th>Размер</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <i class="fas fa-file-archive me-2"></i>
+                        <a href="https://chrdri.net/sites/default/files/niva3-4tema1.1.zip" target="_blank">
+                            Модул 1 - Тема 1.1
+                        </a>
+                    </td>
+                    <td>3.22 MB</td>
+                </tr>
+                <tr>
+                    <td>
+                        <i class="fas fa-file-archive me-2"></i>
+                        <a href="https://chrdri.net/sites/default/files/niva3-4tema1.2.zip" target="_blank">
+                            Модул 1 - Тема 1.2
+                        </a>
+                    </td>
+                    <td>3.31 MB</td>
+                </tr>
+                <tr>
+                    <td>
+                        <i class="fas fa-file-archive me-2"></i>
+                        <a href="https://chrdri.net/sites/default/files/niva3-4tema1.3.zip" target="_blank">
+                            Модул 1 - Тема 1.3
+                        </a>
+                    </td>
+                    <td>3.21 MB</td>
+                </tr>
+                <tr>
+                    <td>
+                        <i class="fas fa-file-archive me-2"></i>
+                        <a href="https://chrdri.net/sites/default/files/niva3-4tema2.1.zip" target="_blank">
+                            Модул 2 - Тема 2.1
+                        </a>
+                    </td>
+                    <td>3.52 MB</td>
+                </tr>
+                <tr>
+                    <td>
+                        <i class="fas fa-file-archive me-2"></i>
+                        <a href="https://chrdri.net/sites/default/files/niva3-4tema2.2.zip" target="_blank">
+                            Модул 2 - Тема 2.2
+                        </a>
+                    </td>
+                    <td>3.33 MB</td>
+                </tr>
+                <tr>
+                    <td>
+                        <i class="fas fa-file-archive me-2"></i>
+                        <a href="https://chrdri.net/sites/default/files/niva3-4tema2.3.zip" target="_blank">
+                            Модул 2 - Тема 2.3
+                        </a>
+                    </td>
+                    <td>3.73 MB</td>
+                </tr>
+                <tr>
+                    <td>
+                        <i class="fas fa-file-archive me-2"></i>
+                        <a href="https://chrdri.net/sites/default/files/niva3-4tema2.4.zip" target="_blank">
+                            Модул 2 - Тема 2.4
+                        </a>
+                    </td>
+                    <td>3.37 MB</td>
+                </tr>
+                <tr>
+                    <td>
+                        <i class="fas fa-file-archive me-2"></i>
+                        <a href="https://chrdri.net/sites/default/files/niva3-4tema2.5.zip" target="_blank">
+                            Модул 2 - Тема 2.5
+                        </a>
+                    </td>
+                    <td>3.03 MB</td>
+                </tr>
+                <tr>
+                    <td>
+                        <i class="fas fa-file-archive me-2"></i>
+                        <a href="https://chrdri.net/sites/default/files/niva3-4tema2.6.zip" target="_blank">
+                            Модул 2 - Тема 2.6
+                        </a>
+                    </td>
+                    <td>2.41 MB</td>
+                </tr>
+                <tr>
+                    <td>
+                        <i class="fas fa-file-archive me-2"></i>
+                        <a href="https://chrdri.net/sites/default/files/niva3-4tema3.1.zip" target="_blank">
+                            Модул 3 - Тема 3.1
+                        </a>
+                    </td>
+                    <td>4.22 MB</td>
+                </tr>
+                <tr>
+                    <td>
+                        <i class="fas fa-file-archive me-2"></i>
+                        <a href="https://chrdri.net/sites/default/files/niva3-4tema3.2.zip" target="_blank">
+                            Модул 3 - Тема 3.2
+                        </a>
+                    </td>
+                    <td>1.28 MB</td>
+                </tr>
+                <tr>
+                    <td>
+                        <i class="fas fa-file-archive me-2"></i>
+                        <a href="https://chrdri.net/sites/default/files/niva3-4tema3.3.zip" target="_blank">
+                            Модул 3 - Тема 3.3
+                        </a>
+                    </td>
+                    <td>3.61 MB</td>
+                </tr>
+                <tr>
+                    <td>
+                        <i class="fas fa-file-archive me-2"></i>
+                        <a href="https://chrdri.net/sites/default/files/niva3-4tema3.4.zip" target="_blank">
+                            Модул 3 - Тема 3.4
+                        </a>
+                    </td>
+                    <td>9.79 MB</td>
+                </tr>
+                <tr>
+                    <td>
+                        <i class="fas fa-file-archive me-2"></i>
+                        <a href="https://chrdri.net/sites/default/files/niva3-4tema4.1.zip" target="_blank">
+                            Модул 4 - Тема 4.1
+                        </a>
+                    </td>
+                    <td>1.74 MB</td>
+                </tr>
+                <tr>
+                    <td>
+                        <i class="fas fa-file-archive me-2"></i>
+                        <a href="https://chrdri.net/sites/default/files/niva3-4tema4.2.zip" target="_blank">
+                            Модул 4 - Тема 4.2
+                        </a>
+                    </td>
+                    <td>1.65 MB</td>
+                </tr>
+                <tr>
+                    <td>
+                        <i class="fas fa-file-archive me-2"></i>
+                        <a href="https://chrdri.net/sites/default/files/niva3-4tema4.3.zip" target="_blank">
+                            Модул 4 - Тема 4.3
+                        </a>
+                    </td>
+                    <td>876.54 KB</td>
+                </tr>
+                <tr>
+                    <td>
+                        <i class="fas fa-file-archive me-2"></i>
+                        <a href="https://chrdri.net/sites/default/files/niva3-4tema4.4.zip" target="_blank">
+                            Модул 4 - Тема 4.4
+                        </a>
+                    </td>
+                    <td>1.55 MB</td>
+                </tr>
+                <tr>
+                    <td>
+                        <i class="fas fa-file-archive me-2"></i>
+                        <a href="https://chrdri.net/sites/default/files/niva3-4tema5.1.zip" target="_blank">
+                            Модул 5 - Тема 5.1
+                        </a>
+                    </td>
+                    <td>2.88 MB</td>
+                </tr>
+                <tr>
+                    <td>
+                        <i class="fas fa-file-archive me-2"></i>
+                        <a href="https://chrdri.net/sites/default/files/niva3-4tema5.2.zip" target="_blank">
+                            Модул 5 - Тема 5.2
+                        </a>
+                    </td>
+                    <td>1.77 MB</td>
+                </tr>
+                <tr>
+                    <td>
+                        <i class="fas fa-file-archive me-2"></i>
+                        <a href="https://chrdri.net/sites/default/files/niva3-4tema5.3.zip" target="_blank">
+                            Модул 5 - Тема 5.3
+                        </a>
+                    </td>
+                    <td>1.24 MB</td>
+                </tr>
+                <tr>
+                    <td>
+                        <i class="fas fa-file-archive me-2"></i>
+                        <a href="https://chrdri.net/sites/default/files/niva3-4tema5.4.zip" target="_blank">
+                            Модул 5 - Тема 5.4
+                        </a>
+                    </td>
+                    <td>2.55 MB</td>
+                </tr>
+            </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="modal" id="materialsModal3" tabindex="-1" aria-labelledby="materialsModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header bg-success text-white">
+        <h5 class="modal-title" id="materialsModalLabel">Учебни материали</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <table class="table table-bordered table-striped align-middle">
+            <thead class="table-success">
+                <tr>
+                    <th>Прикачен файл</th>
+                    <th>Размер</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <i class="fas fa-file-archive me-2"></i>
+                        <a href="https://chrdri.net/sites/default/files/niva5-6tema1.1.rar" target="_blank">
+                            Нива_5-6_тема_1.1
+                        </a>
+                    </td>
+                    <td>1.19 MB</td>
+                </tr>
+                <tr>
+                    <td>
+                        <i class="fas fa-file-archive me-2"></i>
+                        <a href="https://chrdri.net/sites/default/files/niva5-6tema1.2.rar" target="_blank">
+                            Нива_5-6_тема_1.2
+                        </a>
+                    </td>
+                    <td>12.28 MB</td>
+                </tr>
+                <tr>
+                    <td>
+                        <i class="fas fa-file-archive me-2"></i>
+                        <a href="https://chrdri.net/sites/default/files/niva5-6tema1.3.rar" target="_blank">
+                            Нива_5-6_тема_1.3
+                        </a>
+                    </td>
+                    <td>18.54 MB</td>
+                </tr>
+                <tr>
+                    <td>
+                        <i class="fas fa-file-archive me-2"></i>
+                        <a href="https://chrdri.net/sites/default/files/niva5-6tema2.1.rar" target="_blank">
+                            Нива_5-6_тема_2.1
+                        </a>
+                    </td>
+                    <td>8.74 MB</td>
+                </tr>
+                <tr>
+                    <td>
+                        <i class="fas fa-file-archive me-2"></i>
+                        <a href="https://chrdri.net/sites/default/files/niva5-6tema2.2.rar" target="_blank">
+                            Нива_5-6_тема_2.2
+                        </a>
+                    </td>
+                    <td>4.61 MB</td>
+                </tr>
+                <tr>
+                    <td>
+                        <i class="fas fa-file-archive me-2"></i>
+                        <a href="https://chrdri.net/sites/default/files/niva5-6tema2.3.rar" target="_blank">
+                            Нива_5-6_Тема_2.3
+                        </a>
+                    </td>
+                    <td>13.87 MB</td>
+                </tr>
+                <tr>
+                    <td>
+                        <i class="fas fa-file-archive me-2"></i>
+                        <a href="https://chrdri.net/sites/default/files/niva5-6tema2.4.rar" target="_blank">
+                            Нива_5-6_тема_2.4
+                        </a>
+                    </td>
+                    <td>5.28 MB</td>
+                </tr>
+                <tr>
+                    <td>
+                        <i class="fas fa-file-archive me-2"></i>
+                        <a href="https://chrdri.net/sites/default/files/niva5-6tema2.5.rar" target="_blank">
+                            Нива_5-6_тема_2.5
+                        </a>
+                    </td>
+                    <td>4.19 MB</td>
+                </tr>
+                <tr>
+                    <td>
+                        <i class="fas fa-file-archive me-2"></i>
+                        <a href="https://chrdri.net/sites/default/files/niva5-6tema2.6.rar" target="_blank">
+                            Нива_5-6_тема_2.6
+                        </a>
+                    </td>
+                    <td>4.19 MB</td>
+                </tr>
+                <tr>
+                    <td>
+                        <i class="fas fa-file-archive me-2"></i>
+                        <a href="https://chrdri.net/sites/default/files/niva5-6tema3.1.rar" target="_blank">
+                            Нива_5-6_тема_3.1
+                        </a>
+                    </td>
+                    <td>17.58 MB</td>
+                </tr>
+                <tr>
+                    <td>
+                        <i class="fas fa-file-archive me-2"></i>
+                        <a href="https://chrdri.net/sites/default/files/niva5-6tema3.2.rar" target="_blank">
+                            Нива_5-6_тема_3.2
+                        </a>
+                    </td>
+                    <td>19.96 MB</td>
+                </tr>
+                <tr>
+                    <td>
+                        <i class="fas fa-file-archive me-2"></i>
+                        <a href="https://chrdri.net/sites/default/files/niva5-6tema3.3.rar" target="_blank">
+                            Нива_5-6_тема_3.3
+                        </a>
+                    </td>
+                    <td>7.34 MB</td>
+                </tr>
+                <tr>
+                    <td>
+                        <i class="fas fa-file-archive me-2"></i>
+                        <a href="https://chrdri.net/sites/default/files/niva5-6tema3.4.rar" target="_blank">
+                            Нива_5-6_тема_3.4
+                        </a>
+                    </td>
+                    <td>7.87 MB</td>
+                </tr>
+                <tr>
+                    <td>
+                        <i class="fas fa-file-archive me-2"></i>
+                        <a href="https://chrdri.net/sites/default/files/niva5-6tema4.1.rar" target="_blank">
+                            Нива_5-6_Тема_4.1
+                        </a>
+                    </td>
+                    <td>2.97 MB</td>
+                </tr>
+                <tr>
+                    <td>
+                        <i class="fas fa-file-archive me-2"></i>
+                        <a href="https://chrdri.net/sites/default/files/niva5-6tema4.2.rar" target="_blank">
+                            Нива_5-6_Тема_4.2
+                        </a>
+                    </td>
+                    <td>2.23 MB</td>
+                </tr>
+                <tr>
+                    <td>
+                        <i class="fas fa-file-archive me-2"></i>
+                        <a href="https://chrdri.net/sites/default/files/niva5-6tema4.3.rar" target="_blank">
+                            Нива_5-6_Тема_4.3
+                        </a>
+                    </td>
+                    <td>2.5 MB</td>
+                </tr>
+                <tr>
+                    <td>
+                        <i class="fas fa-file-archive me-2"></i>
+                        <a href="https://chrdri.net/sites/default/files/niva5-6tema4.4.rar" target="_blank">
+                            Нива_5-6_Тема_4.4
+                        </a>
+                    </td>
+                    <td>1.96 MB</td>
+                </tr>
+                <tr>
+                    <td>
+                        <i class="fas fa-file-archive me-2"></i>
+                        <a href="https://chrdri.net/sites/default/files/niva5-6tema5.1.rar" target="_blank">
+                            Нива_5-6_Тема_5.1
+                        </a>
+                    </td>
+                    <td>2.38 MB</td>
+                </tr>
+                <tr>
+                    <td>
+                        <i class="fas fa-file-archive me-2"></i>
+                        <a href="https://chrdri.net/sites/default/files/niva5-6tema5.2.rar" target="_blank">
+                            Нива_5-6_Тема_5.2
+                        </a>
+                    </td>
+                    <td>4.33 MB</td>
+                </tr>
+                <tr>
+                    <td>
+                        <i class="fas fa-file-archive me-2"></i>
+                        <a href="https://chrdri.net/sites/default/files/niva5-6tema5.3.rar" target="_blank">
+                            Нива_5-6_Тема_5.3
+                        </a>
+                    </td>
+                    <td>1.23 MB</td>
+                </tr>
+                <tr>
+                    <td>
+                        <i class="fas fa-file-archive me-2"></i>
+                        <a href="https://chrdri.net/sites/default/files/niva5-6tema5.4.rar" target="_blank">
+                            Нива_5-6_Тема_5.4
+                        </a>
+                    </td>
+                    <td>11.07 MB</td>
+                </tr>
+            </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+    const tabs = document.querySelectorAll('.tab-buttons button');
+    const contents = document.querySelectorAll('.tab-content');
+
+    tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            tabs.forEach(t => t.classList.remove('active'));
+            tab.classList.add('active');
+
+            contents.forEach(c => c.style.display = 'none');
+            document.getElementById(tab.getAttribute('data-tab')).style.display = 'block';
         });
-    </script>
+    });
+</script>
+
 </body>
 </html>
 
